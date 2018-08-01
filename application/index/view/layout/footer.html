@@ -1,0 +1,153 @@
+<!-- footer -->
+<footer class="footer-text">
+    <div class="bg-dark footer-text">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <dt>联系我们</dt>
+                    <dd>
+                        <ul class="list-inline">
+                            <li><a href="#">公司简介</a></li>
+                            <li><a href="#">联系方式</a></li>
+                            <li><a href="#">新闻资讯</a></li>
+                            <li><a href="#">合作伙伴</a></li>
+                            <li><a href="#">招商加盟</a></li>
+                        </ul>
+                    </dd>
+                </div>
+                <div class="col-lg-2">
+                    <dt>行业解决方案</dt>
+                    <dd>
+                        <ul class="list-inline">
+                            <li><a href="#">工业用品</a></li>
+                            <li><a href="#">水果零售</a></li>
+                            <li><a href="#">服装零售</a></li>
+                            <li><a href="#">家具销售</a></li>
+                            <li><a href="#">餐饮订餐</a></li>
+                        </ul>
+                    </dd>
+                </div>
+                <div class="col-lg-2">
+                    <dt> </dt>
+                    <dd>
+                    </dd>
+                </div>
+                <div class="col-lg-2">
+                    <dt> </dt>
+                    <dd>
+                    </dd>
+                </div>
+                <div class="col-lg-2">
+                    <dt> </dt>
+                    <dd>
+                        <ul class="list-inline">
+                            <li><button class="btn btn-primary btn-lg zs">招商加盟</button></li>
+                            <li><button class="btn btn-secondary btn-lg">联系我们</button></li>
+                        </ul>
+                    </dd>
+                </div>
+                <div class="col-lg-2">
+
+                    <dd>
+                        <img class="sharemybookcode" src="__UPLOAD__sharemybookcode.png">
+                    </dd>
+                    <dt>扫描二维码关注公众号</dt>
+                </div>
+            </div>
+
+            <hr>
+            <div class=" row text-center ">
+                <ul class="copyright">
+                    <li>
+                        <a href="#">苏州笃信网络有限公司</a>
+                    </li>
+                    <li>© www.trustnk.com</li>
+                    <li>苏ICP备1590054547</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<div class="suspension">
+    <div class="suspension-box">
+        <a href="#" class="a a-service "><i class="i"></i></a>
+        <a href="javascript:;" class="a a-service-phone "><i class="i"></i></a>
+        <a href="javascript:;" class="a a-qrcode"><i class="i"></i></a>
+        <a href="#" class="a a-cart"><i class="i"></i></a>
+        <a href="javascript:;" class="a a-top"><i class="i"></i></a>
+        <div class="d d-service">
+            <i class="arrow"></i>
+            <div class="inner-box">
+                <div class="d-service-item clearfix">
+                    <a href="#" class="clearfix"><span class="circle"><i class="i-qq"></i></span><h3>咨询在线客服</h3></a>
+                </div>
+            </div>
+        </div>
+        <div class="d d-service-phone">
+            <i class="arrow"></i>
+            <div class="inner-box">
+                <div class="d-service-item clearfix">
+                    <span class="circle"><i class="i-tel"></i></span>
+                    <div class="text">
+                        <p>服务热线</p>
+                        <p class="red number">4001-123-456</p>
+                    </div>
+                </div>
+                <div class="d-service-intro clearfix">
+                    <p><i></i>功能和特性</p>
+                    <p><i></i>价格和优惠</p>
+                    <p><i></i>获取内部资料</p>
+                </div>
+            </div>
+        </div>
+        <div class="d d-qrcode">
+            <i class="arrow"></i>
+            <div class="inner-box">
+                <div class="qrcode-img"><img src="__UPLOAD__sharemybookcode.png" alt="" style="width: 150px"></div>
+                <p>微信服务号</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        /* ----- 侧边悬浮 ---- */
+        $(document).on("mouseenter", ".suspension .a", function(){
+            var _this = $(this);
+            var s = $(".suspension");
+            var isService = _this.hasClass("a-service");
+            var isServicePhone = _this.hasClass("a-service-phone");
+            var isQrcode = _this.hasClass("a-qrcode");
+            if(isService){ s.find(".d-service").show().siblings(".d").hide();}
+            if(isServicePhone){ s.find(".d-service-phone").show().siblings(".d").hide();}
+            if(isQrcode){ s.find(".d-qrcode").show().siblings(".d").hide();}
+        });
+        $(document).on("mouseleave", ".suspension, .suspension .a-top", function(){
+            $(".suspension").find(".d").hide();
+        });
+        $(document).on("mouseenter", ".suspension .a-top", function(){
+            $(".suspension").find(".d").hide();
+        });
+        $(document).on("click", ".suspension .a-top", function(){
+            $("html,body").animate({scrollTop: 0});
+        });
+        $(window).scroll(function(){
+            var st = $(document).scrollTop();
+            var $top = $(".suspension .a-top");
+            if(st > 400){
+                $top.css({display: 'block'});
+            }else{
+                if ($top.is(":visible")) {
+                    $top.hide();
+                }
+            }
+        });
+
+    });
+</script>
