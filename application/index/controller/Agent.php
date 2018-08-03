@@ -17,7 +17,7 @@ class Agent extends Controller
             $data=Db::name('main')->find();
             $title=$data['title'];
             $main=[
-                'title'=>'解决方案-' . $id . $data['title'],
+                'title'=>$data['title'],
                 'description'=>$data['description'],
                 'keywords'=>$data['keywords'],
                 'company_name'=>$data['company_name'],
