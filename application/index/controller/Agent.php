@@ -23,6 +23,7 @@ class Agent extends Controller
                 'company_name'=>$data['company_name'],
             ];
         }catch (\mysqli_sql_exception $exception){
+
         }
         $this->assign('main',$main);
         return $this->fetch();
